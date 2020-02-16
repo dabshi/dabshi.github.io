@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dabshi.github.io</id>
     <title>dabshi</title>
-    <updated>2020-02-16T04:26:05.279Z</updated>
+    <updated>2020-02-16T04:36:33.174Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dabshi.github.io"/>
     <link rel="self" href="https://dabshi.github.io/atom.xml"/>
@@ -11,12 +11,38 @@
     <icon>https://dabshi.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, dabshi</rights>
     <entry>
-        <title type="html"><![CDATA[test]]></title>
-        <id>https://dabshi.github.io/post/test</id>
-        <link href="https://dabshi.github.io/post/test">
+        <title type="html"><![CDATA[设计模式 - 策略模式]]></title>
+        <id>https://dabshi.github.io/post/she-ji-mo-shi-ce-lue-mo-shi</id>
+        <link href="https://dabshi.github.io/post/she-ji-mo-shi-ce-lue-mo-shi">
         </link>
-        <updated>2020-02-15T13:13:38.000Z</updated>
-        <content type="html"><![CDATA[<p>test</p>
+        <updated>2020-02-16T04:28:40.000Z</updated>
+        <content type="html"><![CDATA[<h4 id="策略模式">策略模式：</h4>
+<ul>
+<li>
+<p>多个类只区别在表现行为不同,可以使用Strategy模式,在运行时动态选择具体要执行的行为。</p>
+</li>
+<li>
+<p>需要在不同情况下使用不同的策略(算法),或者策略还可能在未来用其它方式来实现。</p>
+</li>
+<li>
+<p>对客户隐藏具体策略(算法)的实现细节,彼此完全独立。#### 策略模式：</p>
+</li>
+<li>
+<p>多个类只区别在表现行为不同,可以使用Strategy模式,在运行时动态选择具体要执行的行为。</p>
+</li>
+<li>
+<p>需要在不同情况下使用不同的策略(算法),或者策略还可能在未来用其它方式来实现。</p>
+</li>
+<li>
+<p>对客户隐藏具体策略(算法)的实现细节,彼此完全独立。</p>
+</li>
+</ul>
+<pre><code>public interface Cash {
+    double result(double money);
+}
+
+
+</code></pre>
 ]]></content>
     </entry>
 </feed>
