@@ -4,52 +4,40 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>设计模式 - 单例模式 - dabshi</title>
+<title>设计模式 - 策略模式 - dabshi</title>
 <link rel="shortcut icon" href="https://dabshi.github.io/favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
 <link rel="stylesheet" href="https://dabshi.github.io/media/css/tailwind.css">
 <link rel="stylesheet" href="https://dabshi.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="设计模式 - 单例模式 - dabshi - Atom Feed" href="https://dabshi.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="设计模式 - 策略模式 - dabshi - Atom Feed" href="https://dabshi.github.io/atom.xml">
 
     
 
-  <meta name="description" content="单例模式：
+  <meta name="description" content="策略模式：
 
-资源共享的情况下，避免由于资源操作时导致的性能或损耗等。如上述中的日志文件，应用配置。
-控制资源的情况下，方便资源之间的互相通信。如线程池等。
+多个类只区别在表现行为不同,可以使用Strategy模式,在运行时动态选择具体要执行的行为。
+需要在不同情况下使用不同的策略(算法),或者策略还可能在未来用其它方式来实现。
+对客户隐藏具体策略(算法)的实现细节,彼此完全独立。..." />
+  <meta property="og:title" content="设计模式 - 策略模式 - dabshi">
+  <meta property="og:description" content="策略模式：
 
-//饿汉
-package single;
-
-public class Hungr..." />
-  <meta property="og:title" content="设计模式 - 单例模式 - dabshi">
-  <meta property="og:description" content="单例模式：
-
-资源共享的情况下，避免由于资源操作时导致的性能或损耗等。如上述中的日志文件，应用配置。
-控制资源的情况下，方便资源之间的互相通信。如线程池等。
-
-//饿汉
-package single;
-
-public class Hungr..." />
+多个类只区别在表现行为不同,可以使用Strategy模式,在运行时动态选择具体要执行的行为。
+需要在不同情况下使用不同的策略(算法),或者策略还可能在未来用其它方式来实现。
+对客户隐藏具体策略(算法)的实现细节,彼此完全独立。..." />
   <meta property="og:type" content="articles">
-  <meta property="og:url" content="https://dabshi.github.io/post/single" />
+  <meta property="og:url" content="https://dabshi.github.io/strategy" />
   <meta property="og:image" content="https://dabshi.github.io/images/avatar.png">
   <meta property="og:image:height" content="630">
   <meta property="og:image:width" content="1200">
-  <meta name="twitter:title" content="设计模式 - 单例模式 - dabshi">
-  <meta name="twitter:description" content="单例模式：
+  <meta name="twitter:title" content="设计模式 - 策略模式 - dabshi">
+  <meta name="twitter:description" content="策略模式：
 
-资源共享的情况下，避免由于资源操作时导致的性能或损耗等。如上述中的日志文件，应用配置。
-控制资源的情况下，方便资源之间的互相通信。如线程池等。
-
-//饿汉
-package single;
-
-public class Hungr...">
+多个类只区别在表现行为不同,可以使用Strategy模式,在运行时动态选择具体要执行的行为。
+需要在不同情况下使用不同的策略(算法),或者策略还可能在未来用其它方式来实现。
+对客户隐藏具体策略(算法)的实现细节,彼此完全独立。...">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://dabshi.github.io/post/single">
+  <link rel="canonical" href="https://dabshi.github.io/strategy">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
@@ -69,170 +57,124 @@ public class Hungr...">
     <div class="max-w-4xl w-full mx-auto">
       <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
         <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
-          设计模式 - 单例模式
+          设计模式 - 策略模式
         </h1>
         
         <div class="mb-8 flex flex-wrap">
           <div class="text-gray-400 text-sm mr-4">2020-02-16 · 2 min read</div>
           
-            <a href="https://dabshi.github.io/tag/30h8u-hoQ" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+            <a href="https://dabshi.github.io/30h8u-hoQ" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
               <i class="ri-hashtag"></i>
               设计模式
             </a>
           
         </div>
         <div class="markdown mb-8" v-pre>
-          <h4 id="单例模式">单例模式：</h4>
+          <h4 id="策略模式">策略模式：</h4>
 <ul>
-<li>资源共享的情况下，避免由于资源操作时导致的性能或损耗等。如上述中的日志文件，应用配置。</li>
-<li>控制资源的情况下，方便资源之间的互相通信。如线程池等。</li>
+<li>多个类只区别在表现行为不同,可以使用Strategy模式,在运行时动态选择具体要执行的行为。</li>
+<li>需要在不同情况下使用不同的策略(算法),或者策略还可能在未来用其它方式来实现。</li>
+<li>对客户隐藏具体策略(算法)的实现细节,彼此完全独立。</li>
 </ul>
-<pre><code class="language-java">//饿汉
-package single;
-
-public class HungrySingle {
-
-    private static HungrySingle hungrySingle = new HungrySingle();
-
-    private HungrySingle(){
-
-    }
-
-    public static HungrySingle getInstance(){
-        return hungrySingle;
-    }
+<pre><code class="language-java">public interface Cash {
+    double result(double money);
 }
 
 </code></pre>
-<hr>
-<pre><code class="language-java">package single;
-
-public class LazySingle {
-
-    private static LazySingle lazySingle;
-
-    private LazySingle(){
-
-    }
-
-    /**
-     * 最简单的方式
-     * 优点：节约资源
-     * 缺点：线程不安全
-     * @return
-     */
-    public static LazySingle getInstance(){
-        if (null == lazySingle){
-            lazySingle = new LazySingle();
-        }
-        return lazySingle;
-    }
-
-    /**
-     * 加 synchronized 关键字 - 方法
-     * 缺点：性能低
-     * @return
-     */
-//    public static synchronized LazySingle getInstance(){
-//        if (null == lazySingle){
-//            lazySingle = new LazySingle();
-//        }
-//        return lazySingle;
-//    }
-
-    /**
-     * 加 synchronized 关键字 - 代码块
-     * 确定：性能较低
-     * @return
-     */
-//    public static LazySingle getInstance(){
-//
-//        synchronized(LazySingle.class){
-//            if (null == lazySingle){
-//                lazySingle = new LazySingle();
-//            }
-//        }
-//        return lazySingle;
-//    }
-
-    /**
-     * 加 synchronized 关键字 - 双重锁
-     * 优点：性能提高
-     * @return
-     */
-//    public static LazySingle getInstance(){
-//
-//        if (lazySingle == null){
-//            synchronized(LazySingle.class){
-//                if (null == lazySingle){
-//                    lazySingle = new LazySingle();
-//                }
-//            }
-//        }
-//
-//        return lazySingle;
-//    }
-
-}
-
-</code></pre>
-<hr>
-<pre><code class="language-java">package single;
-
-/**
- * 内部类实现单例
- * 优点：代码优雅，线程安全，节约资源
- * 缺点：包括懒汉饿汉都存在的 可通过反射强制执行构造方法，解决方法在构造方法加非null判断，不为空则抛出异常（不够优雅）。
+<pre><code class="language-java">/**
+ * 绿头鸭
  */
-public class InnerClassSingle {
+public class MallardDuck extends Duck {
 
-    private InnerClassSingle(){
-
+    public MallardDuck() {
+        this.setFlyBehavior(new FlyByWings());
+        this.setQuackBehavior(new QuackG());
     }
 
-    static class Instance{
-        private static InnerClassSingle INSTANCE = new InnerClassSingle();
+    public void display(){
+        System.out.println(&quot;I'm mallardDuck;&quot;);
+    }
+}
+</code></pre>
+<pre><code class="language-java">/**
+ * 橡皮鸭
+ */
+public class RubberDuck extends Duck {
+
+    public RubberDuck() {
+        this.setFlyBehavior(new FlyNoway());
+        this.setQuackBehavior(new QuackW());
     }
 
-    public static InnerClassSingle getInstance(){
-        return Instance.INSTANCE;
+    public void display(){
+        System.out.println(&quot;I'm rubberDuck&quot;);
     }
+}
+</code></pre>
+<hr>
+<pre><code class="language-java">public interface FlyBehavior {
+
+    void fly();
 }
 
 </code></pre>
+<pre><code class="language-java">public class FlyByWings implements FlyBehavior {
+    @Override
+    public void fly() {
+        System.out.println(&quot;用翅膀飞&quot;);
+    }
+}
+</code></pre>
+<pre><code class="language-java">public class FlyNoway implements FlyBehavior {
+    @Override
+    public void fly() {
+        System.out.println(&quot;不能飞&quot;);
+    }
+}
+</code></pre>
 <hr>
-<pre><code class="language-java">package single;
-//枚举
-public enum  EnumSingle {
-
-    INSTANCE;
-
-    public void data(String name, int age){
-        this.age = age;
-        this.name = name;
+<pre><code class="language-java">public interface QuackBehavior {
+    void quack();
+}
+</code></pre>
+<pre><code class="language-java">public class QuackG implements QuackBehavior {
+    @Override
+    public void quack() {
+        System.out.println(&quot;嘎嘎嘎&quot;);
     }
-
-    private String name;
-
-    private int age;
-
-    public String getName() {
-        return name;
+}
+</code></pre>
+<pre><code class="language-java">public class QuackW implements QuackBehavior {
+    @Override
+    public void quack() {
+        System.out.println(&quot;哇哇哇&quot;);
     }
+}
+</code></pre>
+<hr>
+<pre><code class="language-java">public class Test {
+    public static void main(String[] args) {
+        MallardDuck mallardDuck = new MallardDuck();
+        mallardDuck.display();
+        mallardDuck.performQuack();
+        mallardDuck.performFly();
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+        RubberDuck rubberDuck = new RubberDuck();
+        rubberDuck.display();
+        rubberDuck.performQuack();
+        rubberDuck.setFlyBehavior(new FlyNoway());
+        rubberDuck.performFly();
     }
 }
 
+/*
+I'm mallardDuck;
+嘎嘎嘎
+用翅膀飞
+I'm rubberDuck
+哇哇哇
+不能飞
+*/
 </code></pre>
 
         </div>
@@ -281,7 +223,7 @@ public enum  EnumSingle {
 <ul>
 <li>
 <ul>
-<li><a href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F">单例模式：</a></li>
+<li><a href="#%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F">策略模式：</a></li>
 </ul>
 </li>
 </ul>
