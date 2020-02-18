@@ -17,6 +17,7 @@
 </head>
 <body>
   <div class="antialiased flex flex-col min-h-screen" id="app">
+
     <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
   <div class="flex justify-end px-4">
     <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
@@ -47,41 +48,45 @@
     </a>
   </nav>
 </div>
+
     <div class="max-w-4xl w-full mx-auto pt-32">
-      <div class="py-8 shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        转载
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://dabshi.github.io/0C8rASbM3/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              转载（1）
-            </a>
-          </div>
-        
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://dabshi.github.io/47Q3qRM3iI/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              基础（1）
-            </a>
-          </div>
-        
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://dabshi.github.io/9KbqmTT3C/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              源码（1）
-            </a>
-          </div>
-        
-          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
-            <a href="https://dabshi.github.io/30h8u-hoQ/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-              <i class="ri-hashtag"></i>
-              设计模式（3）
-            </a>
-          </div>
-        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://dabshi.github.io/class-init/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          两道面试题，带你解析Java类加载机制
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-18</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        在许多Java面试中，我们经常会看到关于Java类加载机制的考察，例如下面这道题：
+class Grandpa
+{
+    static
+    {
+        System.out.println(&quot;爷爷在静态代码块&quo...
       </div>
+      <a href="https://dabshi.github.io/class-init/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+  </div>
+  
+      </div>
+
+      
       <footer class="py-12 text-center px-4 md:px-0" v-pre>
   😝
 </footer>
+
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
